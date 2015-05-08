@@ -81,7 +81,6 @@ public class MteSense {
      */
 
     public IOSDriver getIOSDriver() {
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformVersion", props.get("as.ios.platformVersion"));
         capabilities.setCapability("platformName", props.get("as.ios.platformName"));
