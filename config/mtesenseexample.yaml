@@ -1,0 +1,9 @@
+urlfield:
+  type:name
+  value:"Enter URL"
+go:
+  type:name
+  value:"Go"
+bingsearchfield:
+  type:id
+  value:"sb_form_q"
