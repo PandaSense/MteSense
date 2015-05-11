@@ -11,7 +11,9 @@ import java.net.URL;
 import java.util.HashMap;
 
 /**
- * Created by java on 3/25/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/25/15
  */
 public class MteSense {
 
@@ -29,7 +31,6 @@ public class MteSense {
     private AndroidDriver android = null;
 
     private static HashMap<String, String> senseMap = new HashMap<String, String>();
-
 
     /**
      * Set MteSense main map for property

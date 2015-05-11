@@ -8,7 +8,9 @@ import org.junit.After;
 import org.junit.Before;
 
 /**
- * Created by java on 3/28/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/28/15
  */
 public class MteSenseBaseCase {
 
@@ -31,17 +33,6 @@ public class MteSenseBaseCase {
     }
 
     protected MteSenseCore asBaseCore;
-
-
-    private String driverType = null;
-
-    public void setDriverType(String driverType) {
-        this.driverType = driverType;
-    }
-
-    public String getDriverType() {
-        return driverType;
-    }
 
     public void beforeClass(String driverType){
 

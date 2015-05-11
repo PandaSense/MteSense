@@ -3,7 +3,7 @@ package com.mte.common.base;
 import org.apache.log4j.Logger;
 
 /**
- * Project :  appiumsense
+ * Project :  mtesense
  * Created :  java
  * Date    :  4/12/15
  */

@@ -15,7 +15,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by java on 3/26/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/26/15
  */
 public class MteSenseCore {
 

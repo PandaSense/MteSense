@@ -4,7 +4,7 @@ import com.mte.util.ReportUtil;
 import org.apache.log4j.Logger;
 
 /**
- * Project :  appiumsense
+ * Project :  mtesense
  * Created :  java
  * Date    :  4/17/15
  */

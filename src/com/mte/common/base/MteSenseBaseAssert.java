@@ -3,7 +3,7 @@ package com.mte.common.base;
 import org.junit.Assert;
 
 /**
- * Project :  appiumsense
+ * Project :  mtesense
  * Created :  java
  * Date    :  4/18/15
  */
