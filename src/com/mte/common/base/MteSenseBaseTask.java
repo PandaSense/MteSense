@@ -1,5 +1,6 @@
 package com.mte.common.base;
 
+import com.mte.util.ReportUtil;
 import org.apache.log4j.Logger;
 
 /**
@@ -13,11 +14,11 @@ public class MteSenseBaseTask {
 
     protected MteSenseCore asCore;
 
-    public MteSenseBaseTask(MteSenseCore senseCore) {
-        this.asCore=senseCore;
+    private ReportUtil reporter = null;
+
+    public MteSenseBaseTask(MteSenseCore senseCore, ReportUtil reporter) {
+        this.asCore = senseCore;
+        this.reporter=reporter;
     }
-
-
-
 
 }

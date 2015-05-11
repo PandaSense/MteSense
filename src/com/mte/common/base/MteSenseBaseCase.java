@@ -20,7 +20,6 @@ public class MteSenseBaseCase {
 
     private MteSense sense = new MteSense();
 
-
     private ReportUtil reporter = null;
 
     public String getSessionId() {
@@ -33,16 +32,35 @@ public class MteSenseBaseCase {
 
     protected MteSenseCore asBaseCore;
 
-    @Before
-    public void setUp() throws Exception {
 
-        if (props.get("as.mobile.platform").equals("ios")) {
+    private String driverType = null;
+
+    public void setDriverType(String driverType) {
+        this.driverType = driverType;
+    }
+
+    public String getDriverType() {
+        return driverType;
+    }
+
+    public void beforeClass(String driverType){
+
+        if (driverType == null) {
+            driverType = props.get("mte.mobile.platform");
+        }
+        if (driverType.equals("ios")) {
             driver = sense.getIOSDriver();
-
         } else {
             driver = sense.getAndroidDriver();
         }
         asBaseCore = new MteSenseCore(driver);
+    }
+
+    public void afterClass(){
+        if (reporter != null) {
+            reporter.printReport("END");
+        }
+        driver.quit();
     }
 
     public void setReporter(ReportUtil reporter) {
@@ -50,16 +68,4 @@ public class MteSenseBaseCase {
         this.reporter.printReport("START");
 
     }
-
-    @After
-    public void tearDown() throws Exception {
-
-        if (reporter != null) {
-            reporter.printReport("END");
-        }
-
-        driver.quit();
-
-    }
-
 }

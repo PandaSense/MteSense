@@ -23,7 +23,7 @@ public class MteSenseCore {
 
     private Logger logger = Logger.getLogger(MteSenseCore.class);
 
-    private int pauseTime = Integer.parseInt(props.get("as.pauseTime.second"));
+    private int pauseTime = Integer.parseInt(props.get("mte.pauseTime.second"));
 
     private IOSDriver ios = null;
     private AndroidDriver android = null;
@@ -36,18 +36,24 @@ public class MteSenseCore {
 
     private String captureImagePath;
 
-    public MteSenseCore(AppiumDriver driver) {
+    private String testCaseName=null;
 
-        this.driver = driver;
-
+    public String getTestCaseName() {
+        return testCaseName;
     }
 
+    public void setTestCaseName(String testCaseName) {
+        this.testCaseName = testCaseName;
+    }
+
+    public MteSenseCore(AppiumDriver driver) {
+        this.driver = driver;
+    }
 
     public Set<String> getContextHandles(){
 
         return driver.getContextHandles();
     }
-
 
     /**
      * @param name String context name
@@ -207,7 +213,7 @@ public class MteSenseCore {
 
         String folderName = null;
         try {
-            File report_file = new File(props.get("as.screenCapture.path") + "/" + testcasename);
+            File report_file = new File(props.get("mte.screenCapture.path") + "/" + testcasename);
 
             if (!report_file.exists()) {
                 report_file.mkdir();

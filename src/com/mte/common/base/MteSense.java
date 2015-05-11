@@ -30,18 +30,6 @@ public class MteSense {
 
     private static HashMap<String, String> senseMap = new HashMap<String, String>();
 
-    private static String testCaseName = "testcasename";
-
-    public static void markTestCaseName(String testCase) {
-
-        setSenseMap(testCaseName,testCase);
-    }
-
-
-    public static String getTestCaseName(){
-        return getSenseMapProperty(testCaseName);
-    }
-
 
     /**
      * Set MteSense main map for property
@@ -82,12 +70,12 @@ public class MteSense {
 
     public IOSDriver getIOSDriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformVersion", props.get("as.ios.platformVersion"));
-        capabilities.setCapability("platformName", props.get("as.ios.platformName"));
-        capabilities.setCapability("deviceName", props.get("as.ios.deviceName"));
-        capabilities.setCapability("app", new File(props.get("as.ios.app.path")));
+        capabilities.setCapability("platformVersion", props.get("mte.ios.platformVersion"));
+        capabilities.setCapability("platformName", props.get("mte.ios.platformName"));
+        capabilities.setCapability("deviceName", props.get("mte.ios.deviceName"));
+        capabilities.setCapability("app", new File(props.get("mte.ios.app.path")));
         try {
-            ios = new IOSDriver(new URL(props.get("as.url")), capabilities);
+            ios = new IOSDriver(new URL(props.get("mte.url")), capabilities);
             sessionId = ios.getSessionId().toString();
         } catch (Exception e) {
             logger.error(e);
@@ -106,14 +94,14 @@ public class MteSense {
     public AndroidDriver getAndroidDriver() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformVersion", props.get("as.android.platformVersion"));
-        capabilities.setCapability("platformName", props.get("as.android.platformName"));
-        capabilities.setCapability("deviceName", props.get("as.android.deviceName"));
-        capabilities.setCapability("appPackage", props.get("as.android.appPackage"));
-        capabilities.setCapability("appActivity", props.get("as.android.appActivity"));
-        capabilities.setCapability("app", new File(props.get("as.android.app.path")));
+        capabilities.setCapability("platformVersion", props.get("mte.android.platformVersion"));
+        capabilities.setCapability("platformName", props.get("mte.android.platformName"));
+        capabilities.setCapability("deviceName", props.get("mte.android.deviceName"));
+        capabilities.setCapability("appPackage", props.get("mte.android.appPackage"));
+        capabilities.setCapability("appActivity", props.get("mte.android.appActivity"));
+        capabilities.setCapability("app", new File(props.get("mte.android.app.path")));
         try {
-            android = new AndroidDriver(new URL(props.get("as.url")), capabilities);
+            android = new AndroidDriver(new URL(props.get("mte.url")), capabilities);
             sessionId = android.getSessionId().toString();
         } catch (Exception e) {
             logger.error(e);
