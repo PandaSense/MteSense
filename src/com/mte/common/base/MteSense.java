@@ -31,12 +31,18 @@ public class MteSense {
     private IOSDriver ios = null;
     private AndroidDriver android = null;
 
-    public static String FIREFOX_DRIVER="firefox";
-    public static String CHROME_DRIVER="chrome";
-    public static String IOS_DRIVER="ios";
-    public static String ANDROID_DRIVER="android";
-    public static String SAFARI_DRIVER="safari";
-    public static String EXPLORER_DRIVER="safari";
+    private String IEDriverServer = System.getProperty("user.dir")
+            + "/resource/IEDriverServer.exe";
+    private String chromedriver = System.getProperty("user.dir")
+            + "/resource/chromedriver.exe";
+
+
+    public static String FIREFOX_DRIVER = "firefox";
+    public static String CHROME_DRIVER = "chrome";
+    public static String IOS_DRIVER = "ios";
+    public static String ANDROID_DRIVER = "android";
+    public static String SAFARI_DRIVER = "safari";
+    public static String EXPLORER_DRIVER = "safari";
 
 
     private static HashMap<String, String> senseMap = new HashMap<String, String>();
@@ -108,12 +114,13 @@ public class MteSense {
         return getAndroidDriver(capabilities, props.get("mte.url"));
     }
 
-    public IOSDriver getIOSDriver(DesiredCapabilities capabilities,String url) {
+    public IOSDriver getIOSDriver(DesiredCapabilities capabilities, String url) {
         try {
-            if(capabilities!=null){
+            if (capabilities != null) {
                 ios = new IOSDriver(new URL(url), capabilities);
                 sessionId = ios.getSessionId().toString();
-            }else{
+            } else {
+                logger.error("DesiredCapabilities is null, please check with your setting");
                 return null;
             }
         } catch (Exception e) {
@@ -122,12 +129,13 @@ public class MteSense {
         return ios;
     }
 
-    public AndroidDriver getAndroidDriver(DesiredCapabilities capabilities,String url) {
+    public AndroidDriver getAndroidDriver(DesiredCapabilities capabilities, String url) {
         try {
-            if(capabilities!=null){
+            if (capabilities != null) {
                 android = new AndroidDriver(new URL(url), capabilities);
                 sessionId = android.getSessionId().toString();
-            }else{
+            } else {
+                logger.error("DesiredCapabilities is null, please check with your setting");
                 return null;
             }
         } catch (Exception e) {
@@ -135,6 +143,5 @@ public class MteSense {
         }
         return android;
     }
-
 
 }

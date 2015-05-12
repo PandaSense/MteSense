@@ -35,11 +35,6 @@ public class MteSenseBaseCase {
 
     protected MteSenseCore asBaseCore;
 
-    public MteSenseBaseCase() {
-
-
-    }
-
     public void beforeClass(String driverType) {
 
         if (driverType == null) {
