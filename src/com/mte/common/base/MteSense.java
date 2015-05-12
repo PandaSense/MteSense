@@ -4,6 +4,7 @@ import com.mte.util.PropUtil;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -29,6 +30,14 @@ public class MteSense {
 
     private IOSDriver ios = null;
     private AndroidDriver android = null;
+
+    public static String FIREFOX_DRIVER="firefox";
+    public static String CHROME_DRIVER="chrome";
+    public static String IOS_DRIVER="ios";
+    public static String ANDROID_DRIVER="android";
+    public static String SAFARI_DRIVER="safari";
+    public static String EXPLORER_DRIVER="safari";
+
 
     private static HashMap<String, String> senseMap = new HashMap<String, String>();
 
@@ -75,14 +84,8 @@ public class MteSense {
         capabilities.setCapability("platformName", props.get("mte.ios.platformName"));
         capabilities.setCapability("deviceName", props.get("mte.ios.deviceName"));
         capabilities.setCapability("app", new File(props.get("mte.ios.app.path")));
-        try {
-            ios = new IOSDriver(new URL(props.get("mte.url")), capabilities);
-            sessionId = ios.getSessionId().toString();
-        } catch (Exception e) {
-            logger.error(e);
-        }
-        return ios;
 
+        return getIOSDriver(capabilities, props.get("mte.url"));
     }
 
     /**
@@ -101,13 +104,37 @@ public class MteSense {
         capabilities.setCapability("appPackage", props.get("mte.android.appPackage"));
         capabilities.setCapability("appActivity", props.get("mte.android.appActivity"));
         capabilities.setCapability("app", new File(props.get("mte.android.app.path")));
+
+        return getAndroidDriver(capabilities, props.get("mte.url"));
+    }
+
+    public IOSDriver getIOSDriver(DesiredCapabilities capabilities,String url) {
         try {
-            android = new AndroidDriver(new URL(props.get("mte.url")), capabilities);
-            sessionId = android.getSessionId().toString();
+            if(capabilities!=null){
+                ios = new IOSDriver(new URL(url), capabilities);
+                sessionId = ios.getSessionId().toString();
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            logger.error(e);
+        }
+        return ios;
+    }
+
+    public AndroidDriver getAndroidDriver(DesiredCapabilities capabilities,String url) {
+        try {
+            if(capabilities!=null){
+                android = new AndroidDriver(new URL(url), capabilities);
+                sessionId = android.getSessionId().toString();
+            }else{
+                return null;
+            }
         } catch (Exception e) {
             logger.error(e);
         }
         return android;
     }
+
 
 }
