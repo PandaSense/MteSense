@@ -1,7 +1,9 @@
 package com.mte.util;
 
 /**
- * Created by java on 3/18/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/18/15
  */
 public class UnicodeHex {
 

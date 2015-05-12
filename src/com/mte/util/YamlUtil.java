@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.util.HashMap;
 
 /**
- * Project :  appiumsense
+ * Project :  mtesense
  * Created :  java
  * Date    :  4/10/15
  */

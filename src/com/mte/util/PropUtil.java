@@ -9,12 +9,13 @@ import java.util.Properties;
 import java.util.ResourceBundle;
 
 /**
- * Created by java on 3/24/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/24/15
  */
 public class PropUtil {
 
     private static Properties properties = null;
-    private static Logger logger = Logger.getLogger(PropUtil.class);
 
     private static ResourceBundle mainViewResource;
 
@@ -45,25 +46,24 @@ public class PropUtil {
         try {
             is = new FileInputStream(new File(path));
         } catch (Exception e) {
-            logger.error(e);
+            e.printStackTrace();
         }
 
 
         if (is == null) {
-            logger.error("The properties is null.");
             return;
         }
         properties = new Properties();
         try {
             properties.load(is);
         } catch (IOException e) {
-            logger.error("PropUtil.initialize() ：", e);
+            e.printStackTrace();
         } finally {
             try {
                 if (is != null)
                     is.close();
             } catch (Exception e) {
-                logger.error("PropUtil.initialize() ：", e);
+                e.printStackTrace();
             }
         }
     }

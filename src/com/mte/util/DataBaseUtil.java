@@ -6,7 +6,9 @@ import java.util.Properties;
 import java.util.Vector;
 
 /**
- * Created by java on 3/31/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/31/15
  */
 public class DataBaseUtil {
 

@@ -11,7 +11,9 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 
 /**
- * Created by java on 3/26/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/26/15
  */
 public class FileUtil {
     /**

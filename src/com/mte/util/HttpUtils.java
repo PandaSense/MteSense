@@ -7,13 +7,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by java on 3/24/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/24/15
  */
 public class HttpUtils {
 
     private URL url = null;
     private HttpURLConnection connection = null;
-    private Logger logger = Logger.getLogger(HttpUtils.class);
 
     public BufferedReader sendHttpGetReq(String urlStr, String reqParams,
                                          String cookie, String writerCharset) {
@@ -45,7 +46,7 @@ public class HttpUtils {
                                 "ISO-8859-1"));
                 return reader;
             } catch (Exception e) {
-                logger.error("HttpUtils sendHttpGetReq() error!", e);
+               e.printStackTrace();
             }
         }
         return null;
@@ -75,7 +76,7 @@ public class HttpUtils {
                     connection.getInputStream(), "ISO-8859-1"));
             return reader;
         } catch (Exception e) {
-            logger.error("HttpUtils sendHttpPostReq() error!", e);
+            e.printStackTrace();
         }
         return null;
     }
@@ -90,7 +91,7 @@ public class HttpUtils {
             reader.close();
             return reqParams;
         } catch (Exception e) {
-            logger.error("HttpUtils getReqParamsNoCharset() error!", e);
+            e.printStackTrace();
         }
         return reqParams;
     }
@@ -105,7 +106,7 @@ public class HttpUtils {
             reader.close();
             return reqParams;
         } catch (Exception e) {
-            logger.error("HttpUtils getReqParamsByCharset() error!", e);
+            e.printStackTrace();
         }
 
         return reqParams;
@@ -122,7 +123,7 @@ public class HttpUtils {
             line = new String(buffer.toString().getBytes("ISO-8859-1"));
             return line;
         } catch (Exception e) {
-            logger.error("HttpUtils getReqDataNoCharset() error!", e);
+            e.printStackTrace();
         }
         return line;
     }
@@ -140,7 +141,7 @@ public class HttpUtils {
                     readerCharset);
             return line;
         } catch (Exception e) {
-            logger.error("HttpUtils getReqDataByCharset() error!", e);
+            e.printStackTrace();
         }
         return line;
     }
@@ -156,7 +157,7 @@ public class HttpUtils {
             line = buffer.toString();
             return line;
         } catch (Exception e) {
-            logger.error("HttpUtils getRespDataNoCharset() error!", e);
+            e.printStackTrace();
         }
         return line;
     }
@@ -174,7 +175,7 @@ public class HttpUtils {
                     readerCharset);
             return line;
         } catch (Exception e) {
-            logger.error("HttpUtils getRespDataByCharset() error!", e);
+            e.printStackTrace();
         }
         return line;
     }
@@ -217,11 +218,11 @@ public class HttpUtils {
 
     public String getVercode(String url, String reqParams, String cookie,
                              String charset) {
-        logger.debug("getVercode URL : " + url);
+        System.out.println("getVercode URL : " + url);
         BufferedReader reader = sendHttpGetReq(url, reqParams, cookie, charset);
         String respContent = getRespDataByCharset(reader, charset);
         String vercode = get_node_text(respContent, "h1");
-        logger.debug("vercode is : " + vercode);
+        System.out.println("vercode is : " + vercode);
         closed(reader);
         return vercode;
     }

@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by java on 3/23/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/23/15
  */
 public class ExcelUtil {
-
-    private static Logger logger = Logger.getLogger(ExcelUtil.class);
 
     public static Map<String, String> importDataTable(String dir,
                                                       String excelname, String sheetname, String findContent) {
@@ -28,7 +28,7 @@ public class ExcelUtil {
         Map<String, String> mapdata = new LinkedMap();
         mapdata = getSpecifySheet(excelpath, sheetname, findContent);
 
-        logger.info("Imported data,the imported Map data is:" + mapdata);
+        System.out.println("Imported data,the imported Map data is:" + mapdata);
         return mapdata;
     }
 
@@ -40,7 +40,7 @@ public class ExcelUtil {
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
         list = getSpecifySheet(excelpath, sheetname);
 
-        logger.info("Imported data,the imported List data is:" + list);
+        System.out.println("Imported data,the imported List data is:" + list);
         return list;
     }
 
@@ -66,15 +66,15 @@ public class ExcelUtil {
                         .getContents().trim();
                 header.add(columnindex, headerelement);
             }
-            logger.debug("Current excel header is :" + header);
+            System.out.println("Current excel header is :" + header);
             for (int rowindex = 1; rowindex < rows; rowindex++) {
                 String cellcontent = sheet.getCell(0, rowindex).getContents()
                         .toLowerCase().trim();
-                logger.info("found the first column content in excel is:"
+                System.out.println("found the first column content in excel is:"
                         + cellcontent);
 
                 if (cellcontent.equalsIgnoreCase(caseName)) {
-                    logger.debug("Found the correct cell data,the content we found in excel is:"
+                    System.out.println("Found the correct cell data,the content we found in excel is:"
                             + cellcontent);
                     findrow = true;
                     rownumber = rowindex;
@@ -92,11 +92,11 @@ public class ExcelUtil {
                     rowmap.put(mapheader, findcontent);
                 }
             }
-            logger.debug("current Row data is :" + rowmap);
+            System.out.println("current Row data is :" + rowmap);
         } catch (BiffException e) {
-            logger.error(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            logger.error(e);
+            e.printStackTrace();
         }
 
         return rowmap;
@@ -122,22 +122,22 @@ public class ExcelUtil {
                         .getContents().trim();
                 header.add(columnindex, headerelement);
             }
-            logger.debug("Current excel header is :" + header);
+            System.out.println("Current excel header is :" + header);
             for (int rowindex = 1; rowindex < rows; rowindex++) {
                 for (int columnindex = 0; columnindex < columns; columnindex++) {
                     String findcontent = sheet.getCell(columnindex, rowindex)
                             .getContents().trim();
                     String mapheader = header.get(columnindex);
                     rowmap.put(mapheader, findcontent);
-                    logger.debug("current Row data is :" + rowmap);
+                    System.out.println("current Row data is :" + rowmap);
                 }
                 rowList.add(rowmap);
             }
-            logger.debug("current RowList data is :" + rowList);
+            System.out.println("current RowList data is :" + rowList);
         } catch (BiffException e) {
-            logger.error(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            logger.error(e);
+            e.printStackTrace();
         }
 
         return rowList;

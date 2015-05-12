@@ -1,7 +1,9 @@
 package com.mte.util;
 
 /**
- * Created by java on 3/23/15.
+ * Project :  mtesense
+ * Created :  java
+ * Date    :  3/23/15
  */
 public class StringUtil {
 
