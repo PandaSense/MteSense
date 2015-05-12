@@ -31,12 +31,6 @@ public class MteSense {
     private IOSDriver ios = null;
     private AndroidDriver android = null;
 
-    private String IEDriverServer = System.getProperty("user.dir")
-            + "/resource/IEDriverServer.exe";
-    private String chromedriver = System.getProperty("user.dir")
-            + "/resource/chromedriver.exe";
-
-
     public static String FIREFOX_DRIVER = "firefox";
     public static String CHROME_DRIVER = "chrome";
     public static String IOS_DRIVER = "ios";

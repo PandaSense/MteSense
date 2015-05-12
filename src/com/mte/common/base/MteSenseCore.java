@@ -195,14 +195,24 @@ public class MteSenseCore {
         }
     }
 
-    public void captureScreenshotByCase(String testcasename) {
+    public void captureScreenshotByCase() {
         File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtil.copy(screenShotFile.getAbsolutePath(), createCaptureFolder(testcasename) + "/" + testcasename + DateTimeUtil.getCurrentDateTime()+".png");
+            FileUtil.copy(screenShotFile.getAbsolutePath(), createCaptureFolder(testCaseName) + "/" + testCaseName + DateTimeUtil.getCurrentDateTime()+".png");
         } catch (Exception e) {
             logger.error("Save screencapture failed：", e);
         }
     }
+
+    public void captureScreenshotByCase(String testCaseName) {
+        File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtil.copy(screenShotFile.getAbsolutePath(), createCaptureFolder(testCaseName) + "/" + testCaseName + DateTimeUtil.getCurrentDateTime()+".png");
+        } catch (Exception e) {
+            logger.error("Save screencapture failed：", e);
+        }
+    }
+
 
     public File getCaptureScreenshotFile(){
         File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
