@@ -27,14 +27,11 @@ public class MteSenseCore {
 
     private int pauseTime = Integer.parseInt(props.get("mte.pauseTime.second"));
 
-    private IOSDriver ios = null;
-    private AndroidDriver android = null;
-
-    public AppiumDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
     }
 
-    private AppiumDriver driver = null;
+    private WebDriver driver = null;
 
     private String captureImagePath;
 
@@ -48,13 +45,13 @@ public class MteSenseCore {
         this.testCaseName = testCaseName;
     }
 
-    public MteSenseCore(AppiumDriver driver) {
+    public MteSenseCore(WebDriver driver) {
         this.driver = driver;
     }
 
     public Set<String> getContextHandles(){
 
-        return driver.getContextHandles();
+        return ((AppiumDriver)driver).getContextHandles();
     }
 
     /**
@@ -63,11 +60,11 @@ public class MteSenseCore {
 
     public WebDriver context(String name){
 
-        return driver.context(name);
+        return ((AppiumDriver)driver).context(name);
     }
 
     public void hideKeyboard(){
-        driver.hideKeyboard();
+        ((AppiumDriver)driver).hideKeyboard();
     }
 
     /**
@@ -219,7 +216,6 @@ public class MteSenseCore {
         return screenShotFile;
 
     }
-
 
     private String createCaptureFolder(String testcasename) {
 
@@ -608,6 +604,43 @@ public class MteSenseCore {
 
     public int getNumberOfElements(By by) {
         return getNumberOfElements(by, 0);
+    }
+
+    /**
+     * rewrite the get method, adding user defined log</BR>
+     *
+     * @param url
+     *            the url you want to open.
+     * @param retryCount
+     *            retry times when load timeout occuers.
+     */
+
+    public void get(String url, int retryCount) {
+        boolean isSucceed = false;
+        for (int i = 0; i < retryCount; i++) {
+            try {
+                driver.get(url);
+                logger.debug("navigate to url [ " + url + " ]");
+                isSucceed = true;
+                break;
+            } catch (Exception e) {
+                logger.error(e);
+            }
+        }
+    }
+
+    public void get(String url, int retryCount,WebDriver driver) {
+        boolean isSucceed = false;
+        for (int i = 0; i < retryCount; i++) {
+            try {
+                driver.get(url);
+                logger.debug("navigate to url [ " + url + " ]");
+                isSucceed = true;
+                break;
+            } catch (Exception e) {
+                logger.error(e);
+            }
+        }
     }
 
 }
