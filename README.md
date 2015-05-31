@@ -1,5 +1,6 @@
 #Mtesense
 This is tiny testing automation framework include selenium and appium. Some source codes come from internet and other test automation.
+
 #Requirements
 This project based on selenium and appium tools and developed by java program. If you want to config or use it, please check with the following information.
 
@@ -8,7 +9,7 @@ This project based on selenium and appium tools and developed by java program. I
   - Webdriver 2.0.
   - selenium 2.45 and appium 1.3.6 or above.
   - OS include Windows, Linux or Mac.
-  - 
+  
 #Configuration
 
   1. Download source zip file into your local machine and unzip the file.
