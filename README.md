@@ -1,5 +1,5 @@
 #Mtesense
-This is tiny testing automation framework include selenium and appium.
+This is tiny testing automation framework with selenium and appium.
 
 #Requirements
 This project based on selenium and appium tools and developed by java program. If you want to config or use it, please check with the following information.
