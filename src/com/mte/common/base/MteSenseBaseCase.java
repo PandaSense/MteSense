@@ -4,8 +4,6 @@ import com.mte.util.PropUtil;
 import com.mte.util.ReportUtil;
 import io.appium.java_client.AppiumDriver;
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
