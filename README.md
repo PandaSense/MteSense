@@ -7,9 +7,7 @@ This project based on selenium and appium tools and developed by java program. I
   - Webdriver 2.0
   - selenium 2.45 and appium 1.3.6 or above
   - OS include Windows, Linux or Mac
-Note : for chromedriver etc, you need download it by yourself as your OS.
 #Configuration
-Please follow these steps to build Mtesense:
   1. Download source zip file into your local machine and unzip the file.
   2. Create normal java project with your java ide include Eclipse or Intelij IDEA.
   3. Copy all of source files under src folder into your loacl src foler in your jave project.
