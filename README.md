@@ -15,11 +15,13 @@ This project based on selenium and appium tools and developed by java program. I
   1. Download source zip file into your local machine and unzip the file.
   2. Create normal java project with your java ide include Eclipse or Intelij IDEA.
   3. Copy all of source files under src folder into your loacl src foler in your jave project.
-  4. Copy config and lib, log folders into root path in your local project.
-    :config/..
-    :lib/..
-    :src/com/..
-    :log/..
+  4. Copy config and lib, log folders into root path for your local project.
+  
+    config/..
+    lib/..
+    src/com/..
+    log/..
+
   5. Add all of jar files into your local classpath for your project to build mtesense with your ide.
 
 
