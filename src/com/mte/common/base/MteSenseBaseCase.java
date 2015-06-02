@@ -41,7 +41,7 @@ public class MteSenseBaseCase {
     public void beforeClass(String driverType) {
 
         if (driverType == null) {
-            driverType = props.get("mte.test.platform=");
+            driverType = props.get("mte.test.platform");
         }
         initWebDriver(driverType);
         asBaseCore = new MteSenseCore(driver);
@@ -54,7 +54,7 @@ public class MteSenseBaseCase {
     public void beforeClass(String driverType, DesiredCapabilities capabilities, String url) {
 
         if (driverType == null) {
-            driverType = props.get("mte.test.platform=");
+            driverType = props.get("mte.test.platform");
         }
         initWebDriver(driverType, capabilities, url);
         asBaseCore = new MteSenseCore(driver);
