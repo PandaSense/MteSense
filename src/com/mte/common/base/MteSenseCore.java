@@ -76,6 +76,61 @@ public class MteSenseCore {
     }
 
     /**
+     * IOSDriver
+     * @param using the element using
+     */
+
+    public WebElement findElementsByIosUIAutomation(String using) {
+
+
+        return ((IOSDriver) driver).findElementByIosUIAutomation(using);
+    }
+
+
+    /**
+     * IOSDriver
+     * @param using the element using
+     */
+
+    public List<WebElement> findElementByIosUIAutomation(String using) {
+
+
+        return ((IOSDriver) driver).findElementsByIosUIAutomation(using);
+    }
+
+
+    /**
+     * AndroidDriver
+     * @param using the element using
+     */
+
+    public WebElement findElementByAndroidUIAutomator(String using) {
+
+
+        return ((AndroidDriver) driver).findElementByAndroidUIAutomator(using);
+    }
+
+
+    /**
+     * AndroidDriver
+     * @param using the element using
+     */
+
+    public List<WebElement> findElementsByAndroidUIAutomator(String using) {
+
+
+        return ((AndroidDriver) driver).findElementsByAndroidUIAutomator(using);
+    }
+
+
+    /*
+     *
+     *Selenium and Appium common mathods include common webdriver
+     *
+     */
+
+
+    /**
      * wait for the specified element appears with timeout setting.
      *
      * @param locator the element locator on the page
@@ -1243,12 +1298,9 @@ public class MteSenseCore {
     /**
      * select a frame by frame tagName: tagName
      *
-     * @param tagName
-     *            the frame tagName,such as : frame or iframe
-     * @param index
-     *            the frame index,begin with 0
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param tagName the frame tagName,such as : frame or iframe
+     * @param index   the frame index,begin with 0
+     * @param timeout 超时时间，单位：秒
      */
     public void selectFrame(String tagName, int index, long timeout) {
         boolean isSucceed = false;
@@ -1272,10 +1324,8 @@ public class MteSenseCore {
     /**
      * select a frame by frame tagName: tagName
      *
-     * @param tagName
-     *            the frame element locator
-     * @param index
-     *            the frame index,begin with 0
+     * @param tagName the frame element locator
+     * @param index   the frame index,begin with 0
      */
     public void selectFrame(String tagName, int index) {
         selectFrame(tagName, index, 0);
@@ -1285,8 +1335,7 @@ public class MteSenseCore {
     /**
      * select a frame by index
      *
-     * @param index
-     *            the index of the frame to select
+     * @param index   the index of the frame to select
      * @param timeout
      */
     public void selectFrameNoDefault(int index, long timeout) {
@@ -1308,8 +1357,7 @@ public class MteSenseCore {
     /**
      * select a frame by index
      *
-     * @param index
-     *            the index of the frame to select
+     * @param index the index of the frame to select
      */
     public void selectFrameNoDefault(int index) {
         selectFrameNoDefault(index, 0);
@@ -1319,10 +1367,8 @@ public class MteSenseCore {
     /**
      * select a frame by name or id
      *
-     * @param nameOrId
-     *            the name or id of the frame to select
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param nameOrId the name or id of the frame to select
+     * @param timeout  超时时间，单位：秒
      */
     public void selectFrameNoDefault(String nameOrId, long timeout) {
         boolean isSucceed = false;
@@ -1343,8 +1389,7 @@ public class MteSenseCore {
     /**
      * select a frame by name or id
      *
-     * @param nameOrId
-     *            the name or id of the frame to select
+     * @param nameOrId the name or id of the frame to select
      */
     public void selectFrameNoDefault(String nameOrId) {
         selectFrameNoDefault(nameOrId, 0);
@@ -1354,10 +1399,8 @@ public class MteSenseCore {
     /**
      * select a frame by frame element locator: By
      *
-     * @param by
-     *            the frame element locator
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the frame element locator
+     * @param timeout 超时时间，单位：秒
      */
     public void selectFrameNoDefault(By by, long timeout) {
         boolean isSucceed = false;
@@ -1379,8 +1422,7 @@ public class MteSenseCore {
     /**
      * select a frame by frame element locator: By
      *
-     * @param by
-     *            the frame element locator
+     * @param by the frame element locator
      */
     public void selectFrameNoDefault(By by) {
         selectFrameNoDefault(by, 0);
@@ -1390,10 +1432,8 @@ public class MteSenseCore {
     /**
      * select a frame by frame tagName: tagName
      *
-     * @param tagName
-     *            the frame tagName,such as : frame or iframe
-     * @param index
-     *            the frame index,begin with 0
+     * @param tagName the frame tagName,such as : frame or iframe
+     * @param index   the frame index,begin with 0
      * @param timeout
      */
     public void selectFrameNoDefault(String tagName, int index, long timeout) {
@@ -1417,10 +1457,8 @@ public class MteSenseCore {
     /**
      * select a frame by frame tagName: tagName
      *
-     * @param tagName
-     *            the frame element locator
-     * @param index
-     *            the frame index,begin with 0
+     * @param tagName the frame element locator
+     * @param index   the frame index,begin with 0
      */
     public void selectFrameNoDefault(String tagName, int index) {
         selectFrame(tagName, index, 0);
@@ -1429,10 +1467,8 @@ public class MteSenseCore {
     /**
      * edit a content editable iframe
      *
-     * @param index
-     *            the index of the frame to select
-     * @param text
-     *            the text string to be input
+     * @param index the index of the frame to select
+     * @param text  the text string to be input
      */
     protected void editFrameText(int index, String text) {
         boolean isSucceed = false;
@@ -1450,10 +1486,8 @@ public class MteSenseCore {
     /**
      * edit a content editable iframe
      *
-     * @param nameOrId
-     *            the name or id of the frame to select
-     * @param text
-     *            the text string to be input
+     * @param nameOrId the name or id of the frame to select
+     * @param text     the text string to be input
      */
     protected void editFrameText(String nameOrId, String text) {
         boolean isSucceed = false;
@@ -1471,10 +1505,8 @@ public class MteSenseCore {
     /**
      * edit a content editable iframe
      *
-     * @param by
-     *            the frame element locaotr
-     * @param text
-     *            the text string to be input
+     * @param by   the frame element locaotr
+     * @param text the text string to be input
      */
     protected void editFrameText(By by, String text) {
         boolean isSucceed = false;
@@ -1493,10 +1525,8 @@ public class MteSenseCore {
     /**
      * doubleclick on the element
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the locator you want to find the element
+     * @param timeout 超时时间，单位：秒
      */
     public void doubleClick(By by, long timeout) {
         boolean isSucceed = false;
@@ -1516,22 +1546,18 @@ public class MteSenseCore {
     /**
      * doubleclick on the element
      *
-     * @param by
-     *            the locator you want to find the element
+     * @param by the locator you want to find the element
      */
     public void doubleClick(By by) {
         doubleClick(by, 0);
     }
 
 
-
     /**
      * moveToElement
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the locator you want to find the element
+     * @param timeout 超时时间，单位：秒
      */
     public void moveToElement(By by, long timeout) {
         boolean isSucceed = false;
@@ -1550,8 +1576,7 @@ public class MteSenseCore {
     /**
      * moveToElement
      *
-     * @param by
-     *            the locator you want to find the element
+     * @param by the locator you want to find the element
      */
     public void moveToElement(By by) {
         moveToElement(by, 0);
@@ -1560,10 +1585,8 @@ public class MteSenseCore {
     /**
      * right click on the element
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param timeout
-     *            seconds
+     * @param by      the locator you want to find the element
+     * @param timeout seconds
      */
     public void rightClick(By by, long timeout) {
         boolean isSucceed = false;
@@ -1582,22 +1605,18 @@ public class MteSenseCore {
     /**
      * right click on the element
      *
-     * @param by
-     *            the locator you want to find the element
+     * @param by the locator you want to find the element
      */
     public void rightClick(By by) {
         rightClick(by, 0);
     }
 
 
-
     /**
      * rewrite the submit method, submit on the element to be find by By
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param timeout
-     *           seconds
+     * @param by      the locator you want to find the element
+     * @param timeout seconds
      */
     public void submitForm(By by, long timeout) {
         boolean isSucceed = false;
@@ -1615,8 +1634,7 @@ public class MteSenseCore {
     /**
      * rewrite the submit method, submit on the element to be find by By
      *
-     * @param by
-     *            the locator you want to find the element
+     * @param by the locator you want to find the element
      */
     public void submitForm(By by) {
         submitForm(by, 0);
@@ -1626,12 +1644,9 @@ public class MteSenseCore {
      * rewrite the sendKeys method, sendKeys on the element to be find by
      * By
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the text you want to input to element
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the locator you want to find the element
+     * @param text    the text you want to input to element
+     * @param timeout 超时时间，单位：秒
      */
     public void sendKeysAppend(By by, String text, long timeout) {
         boolean isSucceed = false;
@@ -1651,10 +1666,8 @@ public class MteSenseCore {
      * rewrite the sendKeys method, sendKeys on the element to be find by
      * By
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the text you want to input to element
+     * @param by   the locator you want to find the element
+     * @param text the text you want to input to element
      */
     public void sendKeysAppend(By by, String text) {
         sendKeysAppend(by, text, 0);
@@ -1664,12 +1677,9 @@ public class MteSenseCore {
      * rewrite the sendKeys method, sendKeys on the element to be find by
      * By
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the text you want to input to element
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the locator you want to find the element
+     * @param text    the text you want to input to element
+     * @param timeout 超时时间，单位：秒
      */
     public void sendKeys(By by, String text, long timeout) {
         boolean isSucceed = false;
@@ -1690,10 +1700,8 @@ public class MteSenseCore {
      * rewrite the sendKeys method, sendKeys on the element to be find by
      * By
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the text you want to input to element
+     * @param by   the locator you want to find the element
+     * @param text the text you want to input to element
      */
     public void sendKeys(By by, String text) {
         sendKeys(by, text, 0);
@@ -1703,12 +1711,9 @@ public class MteSenseCore {
     /**
      * select an item from a picklist by item value
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param itemValue
-     *            the item value of the item to be selected
-     * @param timeout
-     *            seconds
+     * @param by        the locator you want to find the element
+     * @param itemValue the item value of the item to be selected
+     * @param timeout   seconds
      */
     public void selectByValue(By by, String itemValue, long timeout) {
         boolean isSucceed = false;
@@ -1730,10 +1735,8 @@ public class MteSenseCore {
     /**
      * select an item from a picklist by item value
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param itemValue
-     *            the item value of the item to be selected
+     * @param by        the locator you want to find the element
+     * @param itemValue the item value of the item to be selected
      */
     public void selectByValue(By by, String itemValue) {
         selectByValue(by, itemValue, 0);
@@ -1743,12 +1746,9 @@ public class MteSenseCore {
     /**
      * select an item from a picklist by item value
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the item value of the item to be selected
-     * @param timeout
-     *            超时时间，单位：秒
+     * @param by      the locator you want to find the element
+     * @param text    the item value of the item to be selected
+     * @param timeout 超时时间，单位：秒
      */
     public void selectByVisibleText(By by, String text, long timeout) {
         boolean isSucceed = false;
@@ -1769,10 +1769,8 @@ public class MteSenseCore {
     /**
      * select an item from a picklist by item value
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param text
-     *            the item value of the item to be selected
+     * @param by   the locator you want to find the element
+     * @param text the item value of the item to be selected
      */
     public void selectByVisibleText(By by, String text) {
         selectByVisibleText(by, text, 0);
@@ -1782,12 +1780,9 @@ public class MteSenseCore {
     /**
      * set the checkbox on or off
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param onOrOff
-     *            on or off to set the checkbox
-     * @param timeout
-     *            seconds
+     * @param by      the locator you want to find the element
+     * @param onOrOff on or off to set the checkbox
+     * @param timeout seconds
      */
     public void setCheckBox(By by, String onOrOff, long timeout) {
         boolean isSucceed = false;
@@ -1826,10 +1821,8 @@ public class MteSenseCore {
     /**
      * set the checkbox on or off
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param onOrOff
-     *            on or off to set the checkbox
+     * @param by      the locator you want to find the element
+     * @param onOrOff on or off to set the checkbox
      */
     public void setCheckBox(By by, String onOrOff) {
         setCheckBox(by, onOrOff, 0);
@@ -1839,12 +1832,9 @@ public class MteSenseCore {
     /**
      * set the RadioGroup on or off
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param onOrOff
-     *            on or off to set the RadioGroup
-     * @param timeout
-     *            seconds
+     * @param by      the locator you want to find the element
+     * @param onOrOff on or off to set the RadioGroup
+     * @param timeout seconds
      */
     public void setRadioGroup(By by, String onOrOff, long timeout) {
         boolean isSucceed = false;
@@ -1883,10 +1873,8 @@ public class MteSenseCore {
     /**
      * set the RadioGroup on or off
      *
-     * @param by
-     *            the locator you want to find the element
-     * @param onOrOff
-     *            on or off to set the RadioGroup
+     * @param by      the locator you want to find the element
+     * @param onOrOff on or off to set the RadioGroup
      */
     public void setRadioGroup(By by, String onOrOff) {
         setRadioGroup(by, onOrOff, 0);
@@ -1895,8 +1883,7 @@ public class MteSenseCore {
     /**
      * judge if the alert is present in specified seconds
      *
-     * @param timeout
-     *            timeout in seconds
+     * @param timeout timeout in seconds
      */
     public boolean isAlertExists(long timeout) {
         boolean isSucceed = false;
@@ -1922,12 +1909,10 @@ public class MteSenseCore {
     }
 
 
-
     /**
      * choose OK/Cancel button's OK on alerts
      *
-     * @param timeout
-     *            seconds
+     * @param timeout seconds
      */
     public void chooseOKOnAlert(long timeout) {
         boolean isSucceed = false;
@@ -1944,7 +1929,6 @@ public class MteSenseCore {
 
     /**
      * choose OK/Cancel button's OK on alerts
-     *
      */
     public void chooseOKOnAlert() {
         chooseOKOnAlert(0);
@@ -1953,8 +1937,7 @@ public class MteSenseCore {
     /**
      * choose Cancel on alerts
      *
-     * @param timeout
-     *            seconds
+     * @param timeout seconds
      */
     public void chooseCancelOnAlert(long timeout) {
         boolean isSucceed = false;
@@ -1971,7 +1954,6 @@ public class MteSenseCore {
 
     /**
      * choose Cancel on alerts
-     *
      */
     public void chooseCancelOnAlert() {
         chooseCancelOnAlert(0);
@@ -1980,10 +1962,8 @@ public class MteSenseCore {
     /**
      * set text on alerts
      *
-     * @param text
-     *            the text string you want to input on alerts
-     * @param timeout
-     *            seconds
+     * @param text    the text string you want to input on alerts
+     * @param timeout seconds
      */
     public void setTextOnAlert(String text, long timeout) {
         boolean isSucceed = false;
@@ -2001,8 +1981,7 @@ public class MteSenseCore {
     /**
      * set text on alerts
      *
-     * @param text
-     *            the text string you want to input on alerts
+     * @param text the text string you want to input on alerts
      */
     public void setTextOnAlert(String text) {
         setTextOnAlert(text, 0);
@@ -2012,8 +1991,7 @@ public class MteSenseCore {
     /**
      * run js functions.
      *
-     * @param js
-     *            js function string
+     * @param js js function string
      */
     public void jsExecutor(String js) {
         logger.debug("execute js [ " + js + " ]");
@@ -2023,10 +2001,8 @@ public class MteSenseCore {
     /**
      * execute js functions to do something
      *
-     * @param js
-     *            js function string
-     * @param args
-     *            js execute parameters
+     * @param js   js function string
+     * @param args js execute parameters
      */
     public void jsExecutor(String js, Object... args) {
         logger.debug("execute js [ : " + js + " ],arguments is : "
@@ -2037,8 +2013,7 @@ public class MteSenseCore {
     /**
      * get some value from js functions.
      *
-     * @param js
-     *            js function string
+     * @param js js function string
      */
     public Object jsReturner(String js) {
         logger.debug("execute js [ " + js + " ]");
@@ -2048,10 +2023,8 @@ public class MteSenseCore {
     /**
      * get some value from js functions.
      *
-     * @param js
-     *            js function string
-     * @param args
-     *            js execute parameters
+     * @param js   js function string
+     * @param args js execute parameters
      */
     public Object jsReturner(String js, Object... args) {
         logger.debug("execute js [ : " + js + " ],arguments is : "
