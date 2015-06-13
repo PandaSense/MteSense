@@ -175,7 +175,6 @@ public class WebDriverTable {
      *
      * @param elementType
      *            link/button/edit/checkbox/image/list and so on.
-     * @throws IllegalArgumentException.
      */
     private String elementTagGetter(String elementType) {
         if (elementType.toLowerCase().trim().contains("link")) {
