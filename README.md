@@ -19,6 +19,9 @@ This project based on selenium and appium tools and developed by java program. I
   5. Add all of jar files into your local classpath for your project to build mtesense with your ide.
   6. Check with mtesense.properties, almost all of properties for mtesense in this file include report, driver path, screencapture path and delaytime etc.
 
+#Example
+   - Appium : The app is WebViewApp by Appium example
+
 #Configuration
    - TBD
 
