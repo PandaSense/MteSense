@@ -20,7 +20,7 @@ This project based on selenium and appium tools and developed by java program. I
   6. Check with mtesense.properties, almost all of properties for mtesense in this file include report, driver path, screencapture path and delaytime etc.
 
 #Example
-   - Appium : The app is WebViewApp by Appium example
+   - Appium : The ios app is WebViewApp by Appium example
 
 #Configuration
    - TBD
