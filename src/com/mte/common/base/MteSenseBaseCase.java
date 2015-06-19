@@ -14,7 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
  */
 public class MteSenseBaseCase {
 
-    private PropUtil props = new PropUtil("./config/mtesense.properties");
+    public PropUtil props = new PropUtil("./config/mtesense.properties");
 
     private Logger logger = Logger.getLogger(MteSenseBaseCase.class);
 

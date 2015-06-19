@@ -41,7 +41,7 @@ public class ReportUtil {
     }
 
     private void setReportFileFullPath() {
-        reportFileFullPath = reportFileFoler + "/" + reportFileName+".rtf";
+        reportFileFullPath = reportFileFoler + "/" + reportFileName+DateTimeUtil.getCurrentDateTime()+".rtf";
     }
 
     private void setReportFile() {
