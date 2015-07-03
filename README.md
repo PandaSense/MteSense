@@ -1,6 +1,10 @@
 #Mtesense
 This is tiny testing automation framework with selenium and appium.
 
+#Release History
+
+  - Add MteMonkeyRunner module, you can use java code to write script like using python with MonkeyRunner(Android)
+
 #Requirements
 This project based on selenium and appium tools and developed by java program. If you want to config or use it, please check with the following information.
 
@@ -20,7 +24,8 @@ This project based on selenium and appium tools and developed by java program. I
   6. Check with mtesense.properties, almost all of properties for mtesense in this file include report, driver path, screencapture path and delaytime etc.
 
 #Example
-   - Appium : The ios app is WebViewApp by Appium example
+   - WebViewAppItclTestCase : The ios app is WebViewApp by Appium example
+   - MteMonkeyRunnerTest : MteMonkeyRunner example like MonkeyRunner(Android)
 
 #Configuration
    - TBD
