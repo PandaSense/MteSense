@@ -22,6 +22,7 @@ This project based on selenium and appium tools and developed by java program. I
   4. Copy config and lib folders into root path for your local project.
   5. Add all of jar files into your local classpath for your project to build mtesense with your ide.
   6. Check with mtesense.properties, almost all of properties for mtesense in this file include report, driver path, screencapture path and delaytime etc.
+  7. For MteMonkeyRunner module, you need add ddmlib.jar,guavalib.jar,sdklib.jar,chimpchat.jar under {your android sdk}/tools/lib path into your java build path.
 
 #Example
    - WebViewAppItclTestCase : The ios app is WebViewApp by Appium example
