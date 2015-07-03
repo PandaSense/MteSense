@@ -28,7 +28,7 @@ This project based on selenium and appium tools and developed by java program. I
    - MteMonkeyRunnerTest : MteMonkeyRunner example like MonkeyRunner(Android)
 
 #Configuration
-   - MteMonkey module : com.mte.android.mmr
+   - MteMonkeyRunner module : com.mte.android.mmr
    - Other packages belong to Selenium and Appium framework
 
 #Declaration
