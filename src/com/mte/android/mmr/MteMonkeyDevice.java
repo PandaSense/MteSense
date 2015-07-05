@@ -6,6 +6,7 @@ import com.android.chimpchat.core.IChimpImage;
 import com.android.chimpchat.core.IChimpView;
 import com.android.chimpchat.core.TouchPressType;
 import com.android.chimpchat.hierarchyviewer.HierarchyViewer;
+import com.android.hierarchyviewerlib.models.ViewNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -142,5 +143,26 @@ public class MteMonkeyDevice {
 	   }
 	     return viewSs;
    }
+
+
+    public boolean visible(String byId) {
+        ViewNode node = this.getHierarchyViewer().findViewById(byId);
+        return this.getHierarchyViewer().visible(node);
+    }
+
+
+    public boolean exists(String byId) {
+        ViewNode node = this.getHierarchyViewer().findViewById(byId);
+        return node != null;
+    }
+
+    public String getFocusedWindowId() {
+        return this.getHierarchyViewer().getFocusedWindowName();
+    }
+
+    public String getText(String byId) {
+        ViewNode node = this.getHierarchyViewer().findViewById(byId);
+        return this.getHierarchyViewer().getText(node);
+    }
 
 }
