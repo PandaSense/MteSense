@@ -121,7 +121,7 @@ public class MteSense {
             driver.manage().window().maximize();
             MteSenseAssistant.setMteSenseDriverMap(MteSenseAssistant.chrome,driver);
         } catch (Exception e) {
-            logger.error("Loading Firefox Driver Error : " + e);
+            logger.error("Loading Chrome Driver Error : " + e);
         }
 
         return driver;
@@ -145,7 +145,7 @@ public class MteSense {
             driver.manage().window().maximize();
             MteSenseAssistant.setMteSenseDriverMap(MteSenseAssistant.chrome,driver);
         } catch (Exception e) {
-            logger.error("Loading Firefox Driver Error : " + e);
+            logger.error("Loading Chrome Driver Error : " + e);
         }
 
         return driver;
@@ -177,7 +177,7 @@ public class MteSense {
             driver.manage().window().maximize();
             MteSenseAssistant.setMteSenseDriverMap(MteSenseAssistant.ie,driver);
         } catch (Exception e) {
-            logger.error("Loading Firefox Driver Error : " + e);
+            logger.error("Loading IE Driver Error : " + e);
         }
 
         return driver;
@@ -201,7 +201,7 @@ public class MteSense {
             driver.manage().window().maximize();
             MteSenseAssistant.setMteSenseDriverMap(MteSenseAssistant.ie,driver);
         } catch (Exception e) {
-            logger.error("Loading Firefox Driver Error : " + e);
+            logger.error("Loading IE Driver Error : " + e);
         }
 
         return driver;

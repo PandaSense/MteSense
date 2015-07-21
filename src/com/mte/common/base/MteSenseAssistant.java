@@ -25,6 +25,12 @@ public class MteSenseAssistant {
     private static HashMap<String, String> senseMap = new HashMap<String, String>();
     private static HashMap<String, WebDriver> senseDriverMap = new HashMap<String, WebDriver>();
 
+    private static String PROJECT_PATH=System.getProperty("user.dir");
+
+
+    public static String getProjectPath(){
+        return PROJECT_PATH;
+    }
 
     public static void setMteSenseDriverMap(String driverType, WebDriver driver) {
         senseDriverMap.put(driverType, driver);

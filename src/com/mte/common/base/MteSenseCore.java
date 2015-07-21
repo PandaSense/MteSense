@@ -10,6 +10,8 @@ import io.appium.java_client.ios.IOSDriver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
@@ -2030,6 +2032,16 @@ public class MteSenseCore {
         logger.debug("execute js [ : " + js + " ],arguments is : "
                 + args.toString());
         return ((JavascriptExecutor) driver).executeScript(js, args);
+    }
+
+    /**
+     * scroll screen to the nominated element position
+     * @ Tony
+     * @param table the nominated table
+     */
+    public void scrollScreenToElementPosition(WebElement table){
+        Coordinates coor = ((Locatable)table).getCoordinates();
+        coor.inViewPort();
     }
 
 }

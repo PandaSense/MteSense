@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * Project :  MteMonkeyDevice
  * Created :  java
  * Date    :  7/1/15
- * ddmlib.jar,guavalib.jar,sdklib.jar,chimpchat.jar
+ * ddmlib.jar,guavalib.jar,sdklib.jar,chimpchat.jar,hierarchyviewer2lib.jar
  */
 public class MteMonkeyDevice {
 
