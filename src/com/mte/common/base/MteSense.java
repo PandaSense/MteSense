@@ -23,6 +23,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class MteSense {
 
+    /*
+       This is a test
+     */
+
     private PropUtil props = new PropUtil("./config/mtesense.properties");
 
     private Logger logger = Logger.getLogger(MteSense.class);
