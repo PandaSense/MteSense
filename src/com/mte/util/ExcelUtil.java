@@ -3,8 +3,8 @@ package com.mte.util;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import org.apache.commons.collections.map.LinkedMap;
-import org.apache.log4j.Logger;
+//import org.apache.commons.collections.map.LinkedMap;
+//import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,17 +20,17 @@ import java.util.Map;
  */
 public class ExcelUtil {
 
-    public static Map<String, String> importDataTable(String dir,
-                                                      String excelname, String sheetname, String findContent) {
-        String excelpath = System.getProperty("user.dir") + File.separator
-                + dir + File.separator + excelname;
-
-        Map<String, String> mapdata = new LinkedMap();
-        mapdata = getSpecifySheet(excelpath, sheetname, findContent);
-
-        System.out.println("Imported data,the imported Map data is:" + mapdata);
-        return mapdata;
-    }
+//    public static Map<String, String> importDataTable(String dir,
+//                                                      String excelname, String sheetname, String findContent) {
+//        String excelpath = System.getProperty("user.dir") + File.separator
+//                + dir + File.separator + excelname;
+//
+//        Map<String, String> mapdata = new LinkedMap();
+//        mapdata = getSpecifySheet(excelpath, sheetname, findContent);
+//
+//        System.out.println("Imported data,the imported Map data is:" + mapdata);
+//        return mapdata;
+//    }
 
     public static List<Map<String, String>> importDataTable(String dir,
                                                             String excelname, String sheetname) {

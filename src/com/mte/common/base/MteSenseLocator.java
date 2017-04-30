@@ -1,6 +1,7 @@
 package com.mte.common.base;
 
 import com.mte.util.YamlUtil;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
 import java.util.ArrayList;
@@ -87,6 +88,15 @@ public class MteSenseLocator {
                 break;
             case "cssSelector":
                 locator = By.cssSelector(locatorString);
+                break;
+            case "iOSNsPredicateString":
+                locator = MobileBy.iOSNsPredicateString(locatorString);
+                break;
+            case "iOSClassChain":
+                locator = MobileBy.iOSClassChain(locatorString);
+                break;
+            case "accessibilityId":
+                locator = MobileBy.AccessibilityId(locatorString);
                 break;
             default:
                 locator = null;

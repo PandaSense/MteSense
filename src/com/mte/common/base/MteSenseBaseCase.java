@@ -14,11 +14,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
  */
 public class MteSenseBaseCase {
 
-    public PropUtil props = new PropUtil("./config/mtesense.properties");
+    protected PropUtil props = new PropUtil("./config/mtesense.properties");
 
     private Logger logger = Logger.getLogger(MteSenseBaseCase.class);
 
-    protected WebDriver driver = null;
+    private WebDriver driver = null;
 
     private MteSense sense = new MteSense();
 
@@ -64,7 +64,7 @@ public class MteSenseBaseCase {
         sense.setMteSenseCore(asBaseCore);
     }
 
-    public void initWebDriver(String driverType) {
+    private void initWebDriver(String driverType) {
 
         switch (driverType.trim()) {
             case "ios":
@@ -88,7 +88,7 @@ public class MteSenseBaseCase {
     }
 
 
-    public void initWebDriver(String driverType, DesiredCapabilities capabilities, String url) {
+    private void initWebDriver(String driverType, DesiredCapabilities capabilities, String url) {
 
         switch (driverType.trim()) {
             case "ios":
