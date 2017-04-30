@@ -43,12 +43,12 @@ public class MteMonkeyDevice {
     }
 
     public void dispose(){
-    	impl.dispose();
+        impl.dispose();
     }
-    
-    
+
+
     public HierarchyViewer getHierarchyViewer() {
-    	
+
         return impl.getHierarchyViewer();
     }
 
@@ -109,40 +109,40 @@ public class MteMonkeyDevice {
     }
 
     public void wake(){
-    	impl.wake();
+        impl.wake();
     }
-    
+
     public Collection<String> getPropertyList(){
-    	return impl.getPropertyList();
+        return impl.getPropertyList();
     }
-    
+
     public Collection<String> getViewIdList(){
-    	return impl.getViewIdList();
+        return impl.getViewIdList();
     }
-     
+
     public MteMonkeyView getViewById(String id){
-    	IChimpView view = impl.getView(By.id(id));
-    	return new MteMonkeyView(view);   	
+        IChimpView view = impl.getView(By.id(id));
+        return new MteMonkeyView(view);
     }
-    
-    public MteMonkeyView getViewByAccessibilityIds(int windowId,int accessibilityId){   	
-    	 IChimpView view = impl.getView(By.accessibilityIds(windowId, accessibilityId));
-    	 return new MteMonkeyView(view);   	
+
+    public MteMonkeyView getViewByAccessibilityIds(int windowId,int accessibilityId){
+        IChimpView view = impl.getView(By.accessibilityIds(windowId, accessibilityId));
+        return new MteMonkeyView(view);
     }
-    
+
     public MteMonkeyView getRootView(){
-    	
-    	return new MteMonkeyView(impl.getRootView());
+
+        return new MteMonkeyView(impl.getRootView());
     }
-    
-   public List<MteMonkeyView> getViewsByText(String text){	   
-	   Collection<IChimpView> views = impl.getViews(By.text(text));
-	   List<MteMonkeyView> viewSs=new ArrayList<MteMonkeyView>();
-	   for (IChimpView view : views){
-		   viewSs.add(new MteMonkeyView(view));
-	   }
-	     return viewSs;
-   }
+
+    public List<MteMonkeyView> getViewsByText(String text){
+        Collection<IChimpView> views = impl.getViews(By.text(text));
+        List<MteMonkeyView> viewSs=new ArrayList<MteMonkeyView>();
+        for (IChimpView view : views){
+            viewSs.add(new MteMonkeyView(view));
+        }
+        return viewSs;
+    }
 
 
     public boolean visible(String byId) {
