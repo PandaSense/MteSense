@@ -8,10 +8,10 @@ This is tiny testing automation framework with selenium and appium.
 # Requirements
 This project based on selenium and appium tools and developed by java program. If you want to config or use it, please check with the following information.
 
-  - JDK 1.7 or above.
+  - JDK 1.8 or above.
   - Eclispe or Intelij IDEA or any java ide.
   - Webdriver 2.0.
-  - selenium 2.45 and appium 1.3.6 or above.
+  - selenium 3.0 and appium 1.6.4 or above.
   - OS include Windows, Linux or Mac.
 
 # Installation
