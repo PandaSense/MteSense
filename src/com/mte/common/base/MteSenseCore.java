@@ -23,7 +23,7 @@ import java.util.Set;
 /**
  * Project :  mtesense
  * Created :  java
- * Date    :  3/26/15
+ * Date    :  3/26/15f
  * Note : Some codes come from internet
  */
 public class MteSenseCore {
@@ -64,6 +64,32 @@ public class MteSenseCore {
 
         return ((AppiumDriver) driver).getContextHandles();
     }
+
+
+    /**
+     * Switch to webview for elements
+     */
+    public void switchtoWebView() {
+        try {
+            Set<String> contextNames = ((AppiumDriver) driver).getContextHandles();
+            for (String contextName : contextNames) {
+                if (contextName.contains("WEBVIEW") || contextName.contains("webview")) {
+                    ((AppiumDriver) driver).context(contextName);
+                    System.out.println("Webdriver forward to webview");
+                }
+            }
+        } catch (Exception e) {
+            logger.error("Switch to webview error !");
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
 
 
     /**
