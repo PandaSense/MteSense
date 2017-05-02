@@ -1,5 +1,5 @@
 # Mtesense
-This is tiny testing automation framework with selenium and appium.
+This is lightweight testing automation framework with selenium and appium.
 
 # Release History
 
