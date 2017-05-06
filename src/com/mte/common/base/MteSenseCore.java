@@ -67,6 +67,43 @@ public class MteSenseCore {
 
 
     /**
+     * up slide 1/4
+     */
+    public void slideUP() {
+        int x = ((AppiumDriver) driver).manage().window().getSize().width;
+        int y = ((AppiumDriver) driver).manage().window().getSize().height;
+        ((AppiumDriver) driver).swipe(x / 2, y / 3 * 2, x / 2, y / 3 * 1, 0);
+    }
+
+    /**
+     * down slide 1/4
+     */
+    public void slideDown() {
+        int x = ((AppiumDriver) driver).manage().window().getSize().width;
+        int y = ((AppiumDriver) driver).manage().window().getSize().height;
+        ((AppiumDriver) driver).swipe(x / 2, y / 3 * 1, x / 2, y / 3 * 2, 0);
+    }
+
+    /**
+     * left slide 1/2
+     */
+    public void slideLeft() {
+        int x = ((AppiumDriver) driver).manage().window().getSize().width;
+        int y = ((AppiumDriver) driver).manage().window().getSize().height;
+        ((AppiumDriver) driver).swipe(x / 4 * 3, y / 2, x / 4 * 1, y / 2, 0);
+    }
+
+    /**
+     * right slide 1/2
+     */
+    public void slideRight() {
+        int x = ((AppiumDriver) driver).manage().window().getSize().width;
+        int y = ((AppiumDriver) driver).manage().window().getSize().height;
+        ((AppiumDriver) driver).swipe(x / 4 * 1, y / 2, x / 4 * 3, y / 2, 0);
+    }
+
+
+    /**
      * Switch to webview for elements
      */
     public void switchtoWebView() {
@@ -84,7 +121,7 @@ public class MteSenseCore {
         }
     }
 
-    
+
     /**
      * @param name String context name
      */
