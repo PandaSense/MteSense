@@ -67,6 +67,72 @@ public class MteSenseCore {
 
 
     /**
+     * special slide up
+     *
+     * @param width (1-99)
+     */
+    public void slideUP(int width) {
+
+        if (width <= 0 || width > 100) {
+            logger.error("The slide width should be between 1 t0 99 .");
+        } else {
+            int x = ((AppiumDriver) driver).manage().window().getSize().width;
+            int y = ((AppiumDriver) driver).manage().window().getSize().height;
+            ((AppiumDriver) driver).swipe(x / 10 * width, y / 3 * 2, x / 10 * width, y / 3 * 1, 0);
+        }
+
+    }
+
+    /**
+     * special slide down
+     *
+     * @param width (1-99)
+     */
+    public void slideDown(int width) {
+        if (width <= 0 || width > 100) {
+            logger.error("The slide width should be between 1 t0 99 .");
+        } else {
+            int x = ((AppiumDriver) driver).manage().window().getSize().width;
+            int y = ((AppiumDriver) driver).manage().window().getSize().height;
+            ((AppiumDriver) driver).swipe(x / 10 * width, y / 3 * 1, x / 10 * width, y / 3 * 2, 0);
+        }
+
+    }
+
+    /**
+     * special slide left
+     *
+     * @param width (1-99)
+     */
+    public void slideLeft(int width) {
+        if (width <= 0 || width > 100) {
+            logger.error("The slide width should be between 1 t0 99 .");
+        } else {
+            int x = ((AppiumDriver) driver).manage().window().getSize().width;
+            int y = ((AppiumDriver) driver).manage().window().getSize().height;
+            ((AppiumDriver) driver).swipe(x / 4 * 3, y / 10 * width, x / 4 * 2, y / 10 * width, 0);
+        }
+
+    }
+
+    /**
+     * special slide right
+     *
+     * @param width (1-99)
+     */
+    public void slideRight(int width) {
+        if (width <= 0 || width > 100) {
+            logger.error("The slide width should be between 1 t0 99 .");
+        } else {
+            int x = ((AppiumDriver) driver).manage().window().getSize().width;
+            int y = ((AppiumDriver) driver).manage().window().getSize().height;
+            ((AppiumDriver) driver).swipe(x / 4 * 2, y / 10 * width, x / 4 * 3, y / 10 * width, 0);
+        }
+
+    }
+
+
+    /**
      * up slide 1/4
      */
     public void slideUP() {
