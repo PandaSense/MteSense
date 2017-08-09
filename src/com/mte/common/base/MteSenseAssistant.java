@@ -27,7 +27,6 @@ public class MteSenseAssistant {
 
     private static String PROJECT_PATH=System.getProperty("user.dir");
 
-
     public static String getProjectPath(){
         return PROJECT_PATH;
     }
