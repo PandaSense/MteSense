@@ -2,8 +2,8 @@
 This is lightweight testing automation framework with selenium and appium.
 
 # Release History
-
-  - Add MteMonkeyRunner module, using java code to write script like using python with MonkeyRunner(Android)
+  - Add MteSenseWdd support(Webdriver Dynamic Debug)
+  - Add MteMonkeyRunner module, using java code to write script like using python with MonkeyRunner(Android)
 
 # Requirements
 This project based on selenium and appium tools and developed by java program. If you want to config or use it, please check with the following information.
