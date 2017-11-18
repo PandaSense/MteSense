@@ -57,6 +57,26 @@ public class MteSense {
     }
 
 
+    public WebDriver getGeckoDriver(){
+        System.setProperty("webdriver.gecko.driver", props.get("mte.geckodriver.path"));
+
+        return getFirefoxDriver();
+    }
+
+    public WebDriver getGeckoDriver(String geckoDriverPath){
+        System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+
+        return getFirefoxDriver();
+    }
+
+    public WebDriver getGeckoDriver(DesiredCapabilities capabilities){
+        System.setProperty("webdriver.gecko.driver", props.get("mte.geckodriver.path"));
+
+        return getFirefoxDriver(capabilities);
+    }
+
+
+
     public WebDriver getFirefoxDriver() {
         System.setProperty("webdriver.firefox.bin", props.get("mte.firefoxdriver.path"));
         try {
