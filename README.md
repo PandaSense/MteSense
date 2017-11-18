@@ -2,6 +2,7 @@
 This is lightweight testing automation framework with selenium and appium.
 
 # Release History
+  - Add geckodriver support for firefox
   - Add MteSenseWdd support(Webdriver Dynamic Debug)
   - Add MteMonkeyRunner module, using java code to write script like using python with MonkeyRunner(Android)
 
